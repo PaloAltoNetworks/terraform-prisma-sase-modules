@@ -31,7 +31,7 @@ Terraform version to be 1.3.8 across most of the modules.
 
 ## Roadmap
 
-We are maintaining a [public roadmap](https://github.com/orgs/PaloAltoNetworks/projects/33/views/1) to help users understand when we will release new features, bug fixes and enhancements.
+We are maintaining a [public roadmap](https://github.com/orgs/PaloAltoNetworks/projects/52/views/1) to help users understand when we will release new features, bug fixes and enhancements.
 
 ## Versioning
 
