@@ -1,30 +1,26 @@
 resource "sase_anti_spyware_profiles" "this" {
-  for_each    = try(var.anti_spyware_profiles, {})
-  folder      = each.value.folder
-  name        = each.key
-  description = try(each.value.description, null)
-  rules = [
-    {
-      name        = "test1"
-      action      = { drop = true }
-      category    = "backdoor"
-      severity    = ["high"]
-      threat_name = "test"
-    }
-  ]
-  #  threat_exception = try(each.value.threat_exception, null)
+  for_each         = try(var.anti_spyware_profiles, {})
+  folder           = each.value.folder
+  name             = each.key
+  description      = try(each.value.description, null)
+  rules            = try(each.value.rules, null)
+  threat_exception = try(each.value.threat_exception, null)
 }
 
 resource "sase_file_blocking_profiles" "this" {
-  for_each = try(var.file_blocking_profiles, {})
-  folder   = each.value.folder
-  name     = each.key
+  for_each    = try(var.file_blocking_profiles, {})
+  folder      = each.value.folder
+  name        = each.key
+  description = try(each.value.description, null)
+  rules       = try(each.value.rules, null)
 }
 
 resource "sase_dns_security_profiles" "this" {
-  for_each = try(var.dns_security_profiles, {})
-  folder   = each.value.folder
-  name     = each.key
+  for_each       = try(var.dns_security_profiles, {})
+  folder         = each.value.folder
+  name           = each.key
+  botnet_domains = try(each.value.botnet_domains, null)
+  description    = try(each.value.description, null)
 }
 
 #resource "sase_url_filtering_profiles" "this" {
@@ -39,13 +35,18 @@ resource "sase_vulnerability_protection_profiles" "this" {
   name             = each.key
   description      = try(each.value.description, [])
   threat_exception = try(each.value.threat_exception, null)
-  rules            = try(each.value.rules, [])
+  rules            = try(each.value.rules, null)
 }
 
 resource "sase_wildfire_anti_virus_profiles" "this" {
-  for_each = try(var.wildfire_anti_virus_profiles, {})
-  folder   = each.value.folder
-  name     = each.key
+  for_each       = try(var.wildfire_anti_virus_profiles, {})
+  folder         = each.value.folder
+  name           = each.key
+  description    = try(each.value.description, null)
+  rules          = try(each.value.rules, null)
+  packet_capture = try(each.value.packet_capture, false)
+  threat_exception = try(each.value.threat_exception, null)
+  mlav_exception = try(each.value.mlav_exception, null)
 }
 
 resource "sase_profile_groups" "this" {
