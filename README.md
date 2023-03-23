@@ -4,8 +4,8 @@
 
 ## Overview
 
-A set of modules for using **Palo Alto Networks Prisma SASE** to provide control and protection
-to your applications running in Amazon Web Services (AWS). These modules support the management and provisioning
+A set of modules for using **Palo Alto Networks Prisma SASE Terraform Provider** to provide control and protection
+to your applications and users on Prisma SASE. These modules support the management and provisioning
 of policy, objects, remote networks, services connections and more.
 
 Examples provided try to follow along the Prisma SASE Architecture Guides.
