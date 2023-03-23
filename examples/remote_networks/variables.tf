@@ -1,4 +1,12 @@
-variable "ipsec_crypto_definitions" {}
-variable "ike_crypto_definitions" {}
-variable "remote_networks" {}
-variable "ipsec_tunnels" {}
+variable "ipsec_crypto_profiles" {
+  default = {}
+}
+variable "ike_crypto_profiles" {
+  default = {}
+}
+variable "remote_networks" {
+  default = {}
+}
+variable "ipsec_tunnels" {
+  default = {}
+}

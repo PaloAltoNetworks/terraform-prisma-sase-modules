@@ -2,6 +2,9 @@ resource "sase_anti_spyware_profiles" "this" {
   for_each = try(var.anti_spyware_profiles, {})
   folder   = each.value.folder
   name     = each.key
+  description = try(each.value.description, null)
+  rules = try(each.value.rules, null)
+  threat_exception = try(each.value.threat_exception, null)
 }
 
 resource "sase_file_blocking_profiles" "this" {

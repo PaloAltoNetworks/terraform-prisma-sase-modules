@@ -14,6 +14,6 @@
 #  value = data.sase_bandwidth_allocations_list.this
 #}
 
-output "remote_network_deets" {
-  value = module.remote_networks.remote_networks
-}
+#output "remote_network_deets" {
+#  value = module.remote_networks.remote_networks
+#}
