@@ -14,7 +14,7 @@ module "remote_networks_with_yaml" {
   ike_crypto_profiles = yamldecode(file("./data/config.yaml"))["ike_crypto_profiles"]
   ipsec_crypto_profiles = yamldecode(file("./data/config.yaml"))["ipsec_crypto_profiles"]
   remote_networks = yamldecode(file("./data/config.yaml"))["remote_networks"]
-#  ike_gateways = yamldecode(file("./data/config.yaml"))["ike_gateways"]
+#  ike_gateways = yamldecode(file("./data/config.yaml"))["ike_gateways"] #TODO PSK bug at to moment.
   ipsec_tunnels = yamldecode(file("./data/config.yaml"))["ipsec_tunnels"]
   spns = local.spns
 }
