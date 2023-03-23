@@ -17,7 +17,7 @@ A Remote Network will not go active until peerings are established with the remo
 | Name                                                                      | Version           |
 |---------------------------------------------------------------------------|-------------------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.8, < 1.4.2 |
-| <a name="requirement_sase"></a> [aws](#requirement\_sase)                 | ~> 0.1            |
+| <a name="requirement_sase"></a> [sase](#requirement\_sase)                | ~> 0.1            |
 
 ## Providers
 
