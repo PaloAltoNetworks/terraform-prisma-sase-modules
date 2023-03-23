@@ -6,6 +6,11 @@ A set of modules for using **Palo Alto Networks Prisma SASE** to provide control
 to your applications running in Amazon Web Services (AWS). These modules support the management and provisioning
 of policy, objects, remote networks, services connections and more.
 
+Examples provided try to follow along the Prisma SASE Architecture Guides.
+
+* [SASE for Users Architecture Guide](https://www.paloaltonetworks.com/resources/guides/prisma-access-for-users-architecture-guide)
+* [SASE for Securing Internet Design Guide ](https://www.paloaltonetworks.com/resources/guides/sase-securing-internet-design-guide)
+* [SASE for Securing Private Apps Design Guide](https://www.paloaltonetworks.com/resources/guides/sase-securing-private-apps-design-guide)
 
 For copyright and license see the LICENSE file.
 
@@ -29,7 +34,7 @@ We are maintaining a [public roadmap](https://github.com/orgs/PaloAltoNetworks/p
 ## Versioning
 
 These modules follow the principles of [Semantic Versioning](http://semver.org/). You can find each new release,
-along with the changelog, on the GitHub [Releases](https://github.com/PaloAltoNetworks/terraform-sase-modules/releases) page.
+along with the changelog, on the GitHub [Releases](https://github.com/PaloAltoNetworks/terraform-prisma-sase-modules/releases) page.
 
 ## Getting Help
 
