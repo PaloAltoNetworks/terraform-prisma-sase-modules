@@ -3,8 +3,8 @@
 #  anti_spyware_profiles = {}
 #  wildfire_anti_virus_profiles = {}
 #  vulnerability_protection_profiles = var.vulnerability_protection_profiles
-#  file_blocking_profiles = {}
-#  dns_security_profiles = {}
+#  file_blocking_profiles = var.file_blocking_profiles
+#  dns_security_profiles = var.dns_security_profiles
 #  profile_groups = var.profile_groups
 #}
 
@@ -13,8 +13,8 @@ module "profiles_with_yaml" {
   anti_spyware_profiles = {}
   wildfire_anti_virus_profiles = {}
   vulnerability_protection_profiles = yamldecode(file("./data/config.yaml"))["vulnerability_protection_profiles"]
-  file_blocking_profiles = {}
-  dns_security_profiles = {}
+  file_blocking_profiles = yamldecode(file("./data/config.yaml"))["file_blocking_profiles"]
+  dns_security_profiles = yamldecode(file("./data/config.yaml"))["dns_security_profiles"]
   profile_groups = yamldecode(file("./data/config.yaml"))["profile_groups"]
 }
 
