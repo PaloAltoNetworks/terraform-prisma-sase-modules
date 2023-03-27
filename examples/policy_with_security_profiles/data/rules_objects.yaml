@@ -38,7 +38,7 @@ security_rules:
     negate_destination: false
     profile_setting:
       group:
-        - "best-practice"
+        - "terraform_shared_profile_group1"
 
   terraform-secrule-2:
     folder: "Shared"
@@ -67,7 +67,9 @@ security_rules:
       - "any"
     application:
       - "any"
-
+    profile_setting:
+      group:
+        - "terraform_shared_profile_group1"
 services:
   terraform-tcp-service-1:
     folder: "Mobile Users"

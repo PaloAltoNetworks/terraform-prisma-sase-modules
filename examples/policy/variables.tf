@@ -18,3 +18,7 @@ variable "tags" {
 variable "addresses" {
   default = {}
 }
+
+variable "schedules" {
+  default = {}
+}

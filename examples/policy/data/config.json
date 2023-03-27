@@ -139,5 +139,106 @@
         "terraform-tcp-service-1"
       ]
     }
+  },
+  "addresses": {
+    "terraform-ipnetmask-google-1": {
+      "folder": "Shared",
+      "description": "Google Primary DNS1",
+      "ip_netmask": "8.8.8.8/32",
+      "tag": [
+        "red-alert"
+      ]
+    },
+    "terraform-ip-range-10-100": {
+      "folder": "Shared",
+      "description": "Private Range 1",
+      "ip_range": "10.100.0.1-10.100.0.240",
+      "tag": [
+        "blue-alert"
+      ]
+    },
+    "terraform-fqdn-pan": {
+      "folder": "Shared",
+      "description": "PANW",
+      "fqdn": "www.paloaltonetworks.com",
+      "tag": [
+        "green-block",
+        "blue-alert"
+      ]
+    },
+    "terraform-wildcard-pan": {
+      "folder": "Shared",
+      "description": "PANW",
+      "ip_wildcard": "10.100.4.0/0.0.248.255"
+    }
+  },
+  "address_groups": {
+    "terraform-shared-address-group-1": {
+      "folder": "Shared",
+      "description": "Address Group for testing",
+      "members": [
+        "terraform-ipnetmask-google-1",
+        "terraform-ip-range-10-100",
+        "terraform-fqdn-pan"
+      ]
+    }
+  },
+  "tags": {
+    "blue-alert": {
+      "folder": "Shared",
+      "comments": "Blue Tag for testing",
+      "color": "Blue"
+    },
+    "green-block": {
+      "folder": "Shared",
+      "comments": "Green Tag for testing",
+      "color": "Green"
+    },
+    "red-alert": {
+      "folder": "Shared",
+      "comments": "Red Tag for testing",
+      "color": "Red"
+    }
+  },
+  "schedules": {
+    "weekly-schedule-1": {
+      "folder": "Shared",
+      "description": "Weekly Schedule for testing",
+      "schedule_type": {
+        "recurring": {
+          "weekly": {
+            "monday": [
+              "00:00-00:15"
+            ],
+            "wednesday": [
+              "00:00-00:15"
+            ],
+            "friday": [
+              "00:00-00:15"
+            ]
+          }
+        }
+      }
+    },
+    "daily-schedule-1": {
+      "folder": "Shared",
+      "description": "Daily Schedule for testing",
+      "schedule_type": {
+        "recurring": {
+          "daily": [
+            "01:00-01:45"
+          ]
+        }
+      }
+    },
+    "non-recurring-schedule-1": {
+      "folder": "Shared",
+      "description": "Non-Recurring Schedule for testing",
+      "schedule_type": {
+        "non_recurring": [
+          "2023/03/27@11:15-2023/03/27@12:15"
+        ]
+      }
+    }
   }
 }

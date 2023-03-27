@@ -38,7 +38,7 @@ resource "sase_objects_addresses" "this" {
   ip_range    = try(each.value.ip_range, null)
   ip_wildcard = try(each.value.ip_wildcard, null)
   fqdn        = try(each.value.fqdn, null)
-  tag         = try(each.value.tags, null)
+  tag         = try(each.value.tag, null)
   depends_on = [
     sase_objects_tags.this
   ]

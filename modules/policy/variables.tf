@@ -17,7 +17,7 @@ variable "service_groups" {
 }
 
 variable "addresses" {
-  type        = map(any)
+  type        = any
   description = "A map of addresses to create"
   default     = {}
 }
@@ -29,7 +29,7 @@ variable "address_groups" {
 }
 
 variable "schedules" {
-  type        = map(any)
+  type        = any
   description = "A map of schedules to create"
   default     = {}
 }

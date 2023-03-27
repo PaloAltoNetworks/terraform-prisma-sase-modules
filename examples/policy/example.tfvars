@@ -93,20 +93,50 @@ addresses = {
     folder      = "Shared"
     description = "Google Primary DNS1"
     ip_netmask  = "8.8.8.8/32"
+    tag         = ["red-alert"]
   }
   terraform-ip-range-10-100 = {
     folder      = "Shared"
     description = "Private Range 1"
     ip_range    = "10.100.0.1-10.100.0.240"
+    tag         = ["blue-alert"]
   }
   terraform-fqdn-pan = {
     folder      = "Shared"
     description = "PANW"
     fqdn        = "www.paloaltonetworks.com"
+    tag         = ["green-block","blue-alert"]
   }
-    terraform-wildcard-pan = {
+  terraform-wildcard-pan = { ## Wildcards do not support Tags and Cannot be used in Address Groups
     folder      = "Shared"
     description = "PANW"
-    ip_wildcard       = "10.100.4.0/0.0.248.255"
+    ip_wildcard = "10.100.4.0/0.0.248.255"
+  }
+}
+
+address_groups = {
+  terraform-shared-address-group-1 = {
+    folder      = "Shared"
+    description = "Address Group for testing"
+    members = ["terraform-ipnetmask-google-1", "terraform-ip-range-10-100",
+    "terraform-fqdn-pan"]
+  }
+}
+
+tags = {
+  blue-alert = {
+    folder   = "Shared"
+    comments = "Blue Tag for testing"
+    color    = "Blue"
+  }
+  green-block = {
+    folder   = "Shared"
+    comments = "Green Tag for testing"
+    color    = "Green"
+  }
+  red-alert = {
+    folder   = "Shared"
+    comments = "Red Tag for testing"
+    color    = "Red"
   }
 }
