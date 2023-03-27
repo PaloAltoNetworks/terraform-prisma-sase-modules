@@ -26,3 +26,6 @@ override.tf.json
 
 # Include example tfvars files you do wish to add to version control
 !example*.tfvars
+
+# Ignore pre-commit install requirements.txt
+requirements.txt

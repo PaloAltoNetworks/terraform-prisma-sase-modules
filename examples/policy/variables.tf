@@ -1,7 +1,20 @@
 variable "security_rules" {
-  type = any
+  type    = any
   default = {}
 }
 
-variable "services" {}
-variable "service_groups" {}
+variable "services" {
+  default = {}
+}
+variable "service_groups" {
+  default = {}
+}
+variable "address_groups" {
+  default = {}
+}
+variable "tags" {
+  default = {}
+}
+variable "addresses" {
+  default = {}
+}

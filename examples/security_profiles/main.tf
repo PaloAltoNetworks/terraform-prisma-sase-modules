@@ -9,13 +9,13 @@
 #}
 
 module "profiles_with_yaml" {
-  source = "../../modules/security_profiles"
-  anti_spyware_profiles = {}
-  wildfire_anti_virus_profiles = {}
+  source                            = "../../modules/security_profiles"
+  anti_spyware_profiles             = {}
+  wildfire_anti_virus_profiles      = {}
   vulnerability_protection_profiles = yamldecode(file("./data/config.yaml"))["vulnerability_protection_profiles"]
-  file_blocking_profiles = yamldecode(file("./data/config.yaml"))["file_blocking_profiles"]
-  dns_security_profiles = yamldecode(file("./data/config.yaml"))["dns_security_profiles"]
-  profile_groups = yamldecode(file("./data/config.yaml"))["profile_groups"]
+  file_blocking_profiles            = yamldecode(file("./data/config.yaml"))["file_blocking_profiles"]
+  dns_security_profiles             = yamldecode(file("./data/config.yaml"))["dns_security_profiles"]
+  profile_groups                    = yamldecode(file("./data/config.yaml"))["profile_groups"]
 }
 
 #module "profiles_with_json" {

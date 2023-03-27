@@ -88,9 +88,9 @@ resource "sase_remote_networks" "this" {
   folder       = try(each.value.folder, "Remote Networks") # Default to Remote Networks Folder
   license_type = try(each.value.license_type, "FWAAS-AGGREGATE")
   name         = each.key
-  region       = try(each.value.region, null)       # Fail out no region was set, required parameter
-  spn_name     = try(var.spns[each.value.region].spns[0], null)     # Fail out no spn was set, required parameter
-  ipsec_tunnel = try(each.value.ipsec_tunnel, null) # Fail out no ipsec tunnel was set, required parameter
+  region       = try(each.value.region, null)                   # Fail out no region was set, required parameter
+  spn_name     = try(var.spns[each.value.region].spns[0], null) # Fail out no spn was set, required parameter
+  ipsec_tunnel = try(each.value.ipsec_tunnel, null)             # Fail out no ipsec tunnel was set, required parameter
 }
 
 #locals {

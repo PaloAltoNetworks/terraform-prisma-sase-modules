@@ -40,13 +40,13 @@ ike_crypto_definitions = {
 }
 remote_networks = {
   terraform-rn-1 = {
-    region       = "europe-northwest"
-#    spn_name     = "us-southeast-amaryllis"
+    region = "europe-northwest"
+    #    spn_name     = "us-southeast-amaryllis"
     ipsec_tunnel = "AWS-VM-1-IPSEC-TUNNEL"
   }
   terraform-rn-2 = {
-    region       = "us-southeast"
-#    spn_name     = "us-southeast-amaryllis"
+    region = "us-southeast"
+    #    spn_name     = "us-southeast-amaryllis"
     ipsec_tunnel = "AWS-VM-1-IPSEC-TUNNEL"
   }
 }
@@ -56,15 +56,15 @@ ipsec_tunnels = {
       ike_gateway = [
         {
           name = "terraform-ike-1"
-        }]
+      }]
       ipsec_crypto_profile = "Others-IPSec-Crypto-Default"
     }
-    tunnel_monitor           = null          # {destination_ip = ""}
+    tunnel_monitor           = null # {destination_ip = ""}
     anti_replay              = false
     copy_tos                 = false
     enable_gre_encapsulation = false
   }
-#  terraform-ipsec-tunnel2 = {
-#
-#  }
+  #  terraform-ipsec-tunnel2 = {
+  #
+  #  }
 }

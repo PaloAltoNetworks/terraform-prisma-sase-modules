@@ -39,14 +39,14 @@ resource "sase_vulnerability_protection_profiles" "this" {
 }
 
 resource "sase_wildfire_anti_virus_profiles" "this" {
-  for_each       = try(var.wildfire_anti_virus_profiles, {})
-  folder         = each.value.folder
-  name           = each.key
-  description    = try(each.value.description, null)
-  rules          = try(each.value.rules, null)
-  packet_capture = try(each.value.packet_capture, false)
+  for_each         = try(var.wildfire_anti_virus_profiles, {})
+  folder           = each.value.folder
+  name             = each.key
+  description      = try(each.value.description, null)
+  rules            = try(each.value.rules, null)
+  packet_capture   = try(each.value.packet_capture, false)
   threat_exception = try(each.value.threat_exception, null)
-  mlav_exception = try(each.value.mlav_exception, null)
+  mlav_exception   = try(each.value.mlav_exception, null)
 }
 
 resource "sase_profile_groups" "this" {

@@ -63,5 +63,5 @@ resource "sase_objects_schedules" "this" {
   folder        = try(each.value.folder, null) # Fail if not set
   name          = each.key
   schedule_type = try(each.value.schedule_type, null) # fail if not set
-  depends_on = []
+  depends_on    = []
 }

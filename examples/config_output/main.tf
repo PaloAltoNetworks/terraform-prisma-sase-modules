@@ -6,7 +6,7 @@
 #}
 
 data "sase_security_rules_list" "this" {
-  folder = "Shared"
+  folder   = "Shared"
   position = "pre"
 }
 

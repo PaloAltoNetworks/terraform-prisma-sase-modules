@@ -27,7 +27,7 @@ variable "vulnerability_protection_profiles" {
 }
 
 variable "profile_groups" {
-    type        = map(any)
-    description = "SASE Profile Groups"
-    default     = {}
+  type        = map(any)
+  description = "SASE Profile Groups"
+  default     = {}
 }

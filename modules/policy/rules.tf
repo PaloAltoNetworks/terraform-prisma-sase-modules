@@ -47,11 +47,11 @@ resource "sase_security_rules" "this" {
   service = try(try(each.value.service_groups, null) != null ? each.value.service_groups :
   try(each.value.services, null) != null ? each.value.services : ["application-default"])
   application        = try(each.value.application, ["any"]) # Default to any application
-  category           = try(each.value.category, ["any"]) # Default to any category
-  position           = try(each.value.position, "pre") # Default to pre rulebase
+  category           = try(each.value.category, ["any"])    # Default to any category
+  position           = try(each.value.position, "pre")      # Default to pre rulebase
   source_user        = try(each.value.source_user, ["any"]) # Default to any user
-  from               = try(each.value.from, ["trust"]) # Default to trust
-  to                 = try(each.value.to, ["untrust"]) # Default to untrust
+  from               = try(each.value.from, ["trust"])      # Default to trust
+  to                 = try(each.value.to, ["untrust"])      # Default to untrust
   description        = try(each.value.description, null)
   destination_hip    = try(each.value.destination_hip, null)
   source_hip         = try(each.value.source_hip, null)

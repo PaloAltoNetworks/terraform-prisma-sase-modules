@@ -1,16 +1,19 @@
-#module "security_policy" {
-#  source         = "../../modules/policy"
-#  security_rules = var.security_rules
-#  services       = var.services
-#  service_groups = var.service_groups
-#}
-
-module "security_policy_with_yaml" {
+module "security_policy" {
   source         = "../../modules/policy"
-  security_rules = yamldecode(file("${path.module}/data/config.yaml"))["security_rules"]
-  services       = yamldecode(file("${path.module}/data/config.yaml"))["services"]
-  service_groups = yamldecode(file("${path.module}/data/config.yaml"))["service_groups"]
+  security_rules = var.security_rules
+  services       = var.services
+  service_groups = var.service_groups
+  addresses      = var.addresses
+  address_groups = {}
+  tags           = {}
 }
+
+#module "security_policy_with_yaml" {
+#  source         = "../../modules/policy"
+#  security_rules = yamldecode(file("${path.module}/data/config.yaml"))["security_rules"]
+#  services       = yamldecode(file("${path.module}/data/config.yaml"))["services"]
+#  service_groups = yamldecode(file("${path.module}/data/config.yaml"))["service_groups"]
+#}
 
 #module "security_policy_with_json" {
 #    source         = "../../modules/policy"

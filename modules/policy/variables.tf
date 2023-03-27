@@ -35,7 +35,7 @@ variable "schedules" {
 }
 
 variable "security_rules" {
-  type = any
+  type        = any
   description = "A map of security rules to create"
   default     = {}
 }
