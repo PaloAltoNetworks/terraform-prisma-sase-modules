@@ -313,41 +313,41 @@
       "position": "pre",
       "schedule": "daily-schedule-1",
       "action": {
-        "class": 1,
-        "dscp_tos": {
-          "codepoints": [
-            {
-              "name": "af-testing-11",
-              "type": {
-                "af": {
-                  "codepoint": "af11"
-                }
-              }
-            },
-            {
-              "name": "ef-testing-1",
-              "type": {
-                "ef": true
-              }
-            },
-            {
-              "name": "cs1-testing",
-              "type": {
-                "cs": {
-                  "codepoint": "cs7"
-                }
-              }
-            },
-            {
-              "name": "tos1-testing",
-              "type": {
-                "tos": {
-                  "codepoint": "cs0"
-                }
+        "class": 1
+      },
+      "dscp_tos": {
+        "codepoints": [
+          {
+            "name": "af-testing-11",
+            "type": {
+              "af": {
+                "codepoint": "af11"
               }
             }
-          ]
-        }
+          },
+          {
+            "name": "ef-testing-1",
+            "type": {
+              "ef": true
+            }
+          },
+          {
+            "name": "cs1-testing",
+            "type": {
+              "cs": {
+                "codepoint": "cs7"
+              }
+            }
+          },
+          {
+            "name": "tos1-testing",
+            "type": {
+              "tos": {
+                "codepoint": "cs0"
+              }
+            }
+          }
+        ]
       }
     }
   }
