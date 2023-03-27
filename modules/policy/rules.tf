@@ -154,10 +154,14 @@ resource "sase_app_override_rules" "this" {
 
 resource "sase_qos_policy_rules" "this" {
   for_each    = try(var.qos_policy_rules, {})
+  folder      = try(each.value.folder, "Shared") # Required
   name        = each.key
   description = try(each.value.description, null)
   action      = try(each.value.action, null)
-  position    = try(each.value.position, null)
+  position    = try(each.value.position, "pre")
   dscp_tos    = try(each.value.dscp_tos, null)
   schedule    = try(each.value.schedule, null)
+  depends_on = [
+    sase_objects_schedules.this
+  ]
 }

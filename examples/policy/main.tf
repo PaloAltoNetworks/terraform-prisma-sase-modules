@@ -9,6 +9,7 @@
 #  schedules              = var.schedules # Currently assigning a schedule to a rule is not supported
 #  app_override_rules     = var.app_override_rules
 #  external_dynamic_lists = var.external_dynamic_lists
+#  qos_policy_rules       = var.qos_policy_rules
 #}
 
 module "security_policy_with_yaml" {
@@ -18,10 +19,11 @@ module "security_policy_with_yaml" {
   service_groups = yamldecode(file("${path.module}/data/config.yaml"))["service_groups"]
   addresses      = yamldecode(file("${path.module}/data/config.yaml"))["addresses"]
   #  address_groups = yamldecode(file("${path.module}/data/config.yaml"))["address_groups"]
-  tags      = yamldecode(file("${path.module}/data/config.yaml"))["tags"]
-  schedules = yamldecode(file("${path.module}/data/config.yaml"))["schedules"]
-  app_override_rules = yamldecode(file("${path.module}/data/config.yaml"))["app_override_rules"]
+  tags                   = yamldecode(file("${path.module}/data/config.yaml"))["tags"]
+  schedules              = yamldecode(file("${path.module}/data/config.yaml"))["schedules"]
+  app_override_rules     = yamldecode(file("${path.module}/data/config.yaml"))["app_override_rules"]
   external_dynamic_lists = yamldecode(file("${path.module}/data/config.yaml"))["external_dynamic_lists"]
+  qos_policy_rules       = yamldecode(file("${path.module}/data/config.yaml"))["qos_policy_rules"]
 }
 
 #module "security_policy_with_json" {
@@ -35,4 +37,5 @@ module "security_policy_with_yaml" {
 #  schedules              = jsondecode(file("${path.module}/data/config.json"))["schedules"]
 #  app_override_rules     = jsondecode(file("${path.module}/data/config.json"))["app_override_rules"]
 #  external_dynamic_lists = jsondecode(file("${path.module}/data/config.json"))["external_dynamic_lists"]
+#  qos_policy_rules       = jsondecode(file("${path.module}/data/config.json"))["qos_policy_rules"]
 #}

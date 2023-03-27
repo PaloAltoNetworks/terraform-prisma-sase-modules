@@ -30,3 +30,11 @@ variable "app_override_rules" {
 variable "external_dynamic_lists" {
   default = {}
 }
+
+variable "qos_policy_rules" {
+  default = {}
+}
+
+variable "qos_profiles" {
+  default = {}
+}

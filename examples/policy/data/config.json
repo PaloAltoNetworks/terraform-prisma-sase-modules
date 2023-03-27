@@ -296,5 +296,59 @@
       "port": 443,
       "protocol": "tcp"
     }
+  },
+  "qos_policy_rules": {
+    "terraform-qos-policy-rule-1": {
+      "folder": "Shared",
+      "description": "QoS Policy Rule for testing",
+      "position": "pre",
+      "schedule": "daily-schedule-1",
+      "action": {
+        "class": 1
+      }
+    },
+    "terraform-qos-policy-rule-2": {
+      "folder": "Shared",
+      "description": "QoS Policy Rule for testing with codepoints",
+      "position": "pre",
+      "schedule": "daily-schedule-1",
+      "action": {
+        "class": 1,
+        "dscp_tos": {
+          "codepoints": [
+            {
+              "name": "af-testing-11",
+              "type": {
+                "af": {
+                  "codepoint": "af11"
+                }
+              }
+            },
+            {
+              "name": "ef-testing-1",
+              "type": {
+                "ef": true
+              }
+            },
+            {
+              "name": "cs1-testing",
+              "type": {
+                "cs": {
+                  "codepoint": "cs7"
+                }
+              }
+            },
+            {
+              "name": "tos1-testing",
+              "type": {
+                "tos": {
+                  "codepoint": "cs0"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
   }
 }

@@ -218,3 +218,36 @@ app_override_rules:
     application: ms-office365
     port: 443
     protocol: tcp
+
+qos_policy_rules:
+  terraform-qos-policy-rule-1:
+    folder: Shared
+    description: QoS Policy Rule for testing
+    position: pre
+    schedule: daily-schedule-1
+    action:
+      class: 1 # DSCP Codes 1-8
+  terraform-qos-policy-rule-2:
+    folder: Shared
+    description: QoS Policy Rule for testing with codepoints
+    position: pre
+    schedule: daily-schedule-1
+    action:
+      class: 1 # DSCP Codes 1-8
+      dscp_tos:
+        codepoints:
+          - name: af-testing-11
+            type:
+              af:
+                codepoint: af11 # [af11, af12, af13, af21, af22, af23, af31, af32, af33, af41, af42]
+          - name: ef-testing-1
+            type:
+              ef: true
+          - name: cs1-testing
+            type:
+              cs:
+                codepoint: cs7 # [cs0, cs1, cs2, cs3, cs4, cs5, cs6, cs7]
+          - name: tos1-testing
+            type:
+              tos:
+                codepoint: cs0 # [cs0, cs1, cs2, cs3, cs4, cs5, cs6, cs7]

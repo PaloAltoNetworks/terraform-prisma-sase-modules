@@ -73,7 +73,7 @@ resource "sase_objects_external_dynamic_lists" "this" {
   type     = try(each.value.type, null) # fail if not set
 }
 
-resource "sase_objects_qos_profiles" "this" {
+resource "sase_qos_profiles" "this" {
   for_each             = try(var.qos_profiles, {})
   name                 = each.key
   folder               = try(each.value.folder, "Shared")
