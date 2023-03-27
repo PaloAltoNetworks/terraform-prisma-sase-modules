@@ -87,3 +87,26 @@ service_groups = {
     members     = ["terraform-tcp-service-1"]
   }
 }
+
+addresses = {
+  terraform-ipnetmask-google-1 = {
+    folder      = "Shared"
+    description = "Google Primary DNS1"
+    ip_netmask  = "8.8.8.8/32"
+  }
+  terraform-ip-range-10-100 = {
+    folder      = "Shared"
+    description = "Private Range 1"
+    ip_range    = "10.100.0.1-10.100.0.240"
+  }
+  terraform-fqdn-pan = {
+    folder      = "Shared"
+    description = "PANW"
+    fqdn        = "www.paloaltonetworks.com"
+  }
+    terraform-wildcard-pan = {
+    folder      = "Shared"
+    description = "PANW"
+    ip_wildcard       = "10.100.4.0/0.0.248.255"
+  }
+}
