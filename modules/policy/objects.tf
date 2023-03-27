@@ -65,3 +65,18 @@ resource "sase_objects_schedules" "this" {
   schedule_type = try(each.value.schedule_type, null) # fail if not set
   depends_on    = []
 }
+
+resource "sase_objects_external_dynamic_lists" "this" {
+  for_each = try(var.external_dynamic_lists, {})
+  folder   = try(each.value.folder, null) # Fail if not set
+  name     = each.key
+  type     = try(each.value.type, null) # fail if not set
+}
+
+resource "sase_objects_qos_profiles" "this" {
+  for_each             = try(var.qos_profiles, {})
+  name                 = each.key
+  folder               = try(each.value.folder, "Shared")
+  aggregate_bandwidth  = try(each.value.aggregate_bandwidth, null)
+  class_bandwidth_type = try(each.value.class_bandwidth_type, null)
+}

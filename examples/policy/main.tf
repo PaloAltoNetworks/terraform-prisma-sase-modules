@@ -5,8 +5,10 @@
 #  service_groups = var.service_groups
 #  addresses      = var.addresses
 #  #  address_groups = var.address_groups # Bug exists in provider for "folder is required"
-#  tags      = var.tags
-#  schedules = var.schedules # Currently assigning a schedule to a rule is not supported
+#  tags                   = var.tags
+#  schedules              = var.schedules # Currently assigning a schedule to a rule is not supported
+#  app_override_rules     = var.app_override_rules
+#  external_dynamic_lists = var.external_dynamic_lists
 #}
 
 module "security_policy_with_yaml" {
@@ -18,6 +20,8 @@ module "security_policy_with_yaml" {
   #  address_groups = yamldecode(file("${path.module}/data/config.yaml"))["address_groups"]
   tags      = yamldecode(file("${path.module}/data/config.yaml"))["tags"]
   schedules = yamldecode(file("${path.module}/data/config.yaml"))["schedules"]
+  app_override_rules = yamldecode(file("${path.module}/data/config.yaml"))["app_override_rules"]
+  external_dynamic_lists = yamldecode(file("${path.module}/data/config.yaml"))["external_dynamic_lists"]
 }
 
 #module "security_policy_with_json" {
@@ -27,6 +31,8 @@ module "security_policy_with_yaml" {
 #  service_groups = jsondecode(file("${path.module}/data/config.json"))["service_groups"]
 #  addresses      = jsondecode(file("${path.module}/data/config.json"))["addresses"]
 #  # address_groups = jsondecode(file("${path.module}/data/config.json"))["address_groups"]
-#  tags      = jsondecode(file("${path.module}/data/config.json"))["tags"]
-#  schedules = jsondecode(file("${path.module}/data/config.json"))["schedules"]
+#  tags                   = jsondecode(file("${path.module}/data/config.json"))["tags"]
+#  schedules              = jsondecode(file("${path.module}/data/config.json"))["schedules"]
+#  app_override_rules     = jsondecode(file("${path.module}/data/config.json"))["app_override_rules"]
+#  external_dynamic_lists = jsondecode(file("${path.module}/data/config.json"))["external_dynamic_lists"]
 #}

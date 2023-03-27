@@ -45,3 +45,22 @@ variable "decryption_rules" {
   description = "A map of decryption rules to create"
   default     = {}
 }
+
+variable "qos_policy_rules" {
+  type    = any
+  default = {}
+}
+variable "app_override_rules" {
+  type    = any
+  default = {}
+}
+variable "qos_profiles" {
+  type    = any
+  default = {}
+}
+
+variable "external_dynamic_lists" {
+  type        = any
+  description = "A map of external dynamic lists to create"
+  default     = {}
+}

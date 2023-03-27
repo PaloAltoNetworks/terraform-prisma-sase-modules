@@ -34,6 +34,24 @@ locals {
       try(v.decrypt_dest_edls, [])
     )
   }, [])
+
+  app_source_list = try({
+    for k, v in var.app_override_rules : k => concat(
+      try(v.source_addresses, []),
+      try(v.source_address_groups, []),
+      try(v.source_regions, []),
+      try(v.source_edls, [])
+    )
+  }, [])
+
+  app_destination_list = try({
+    for k, v in var.app_override_rules : k => concat(
+      try(v.destination_addresses, []),
+      try(v.destination_address_groups, []),
+      try(v.destination_regions, []),
+      try(v.destination_edls, [])
+    )
+  }, [])
 }
 
 
@@ -66,6 +84,7 @@ resource "sase_security_rules" "this" {
     sase_objects_services.this,
     sase_objects_addresses.this,
     sase_objects_address_groups.this,
+    sase_objects_external_dynamic_lists.this,
     sase_objects_tags.this,
     sase_objects_schedules.this
   ]
@@ -102,6 +121,43 @@ resource "sase_decryption_rules" "this" {
     sase_objects_addresses.this,
     sase_objects_address_groups.this,
     sase_objects_tags.this,
+    sase_objects_external_dynamic_lists.this,
     sase_objects_schedules.this
   ]
+}
+
+resource "sase_app_override_rules" "this" {
+  for_each           = try(var.app_override_rules, {})
+  folder             = try(each.value.folder, null) # Required
+  name               = each.key                     # Required
+  position           = try(each.value.position, "pre")
+  description        = try(each.value.description, null)
+  application        = try(each.value.application, null) # Required
+  destination        = length(local.app_destination_list[each.key]) == 0 ? ["any"] : local.app_destination_list[each.key]
+  source             = length(local.app_source_list[each.key]) == 0 ? ["any"] : local.app_source_list[each.key] # Source Regions not supported
+  port               = try(each.value.port, null)                                                               # Required
+  protocol           = try(each.value.protocol, null)                                                           # Required
+  to                 = try(each.value.to, ["untrust"])                                                          # Required
+  from               = try(each.value.from, ["trust"])                                                          # Required
+  disabled           = try(each.value.disabled, false)
+  group_tag          = try(each.value.group_tag, null)
+  negate_destination = try(each.value.negate_destination, false)
+  negate_source      = try(each.value.negate_source, false)
+  tag                = try(each.value.tags, null)
+  depends_on = [
+    sase_objects_tags.this,
+    sase_objects_addresses.this,
+    sase_objects_address_groups.this,
+    sase_objects_external_dynamic_lists.this
+  ]
+}
+
+resource "sase_qos_policy_rules" "this" {
+  for_each    = try(var.qos_policy_rules, {})
+  name        = each.key
+  description = try(each.value.description, null)
+  action      = try(each.value.action, null)
+  position    = try(each.value.position, null)
+  dscp_tos    = try(each.value.dscp_tos, null)
+  schedule    = try(each.value.schedule, null)
 }

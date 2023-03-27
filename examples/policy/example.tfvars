@@ -105,7 +105,7 @@ addresses = {
     folder      = "Shared"
     description = "PANW"
     fqdn        = "www.paloaltonetworks.com"
-    tag         = ["green-block","blue-alert"]
+    tag         = ["green-block", "blue-alert"]
   }
   terraform-wildcard-pan = { ## Wildcards do not support Tags and Cannot be used in Address Groups
     folder      = "Shared"
@@ -170,5 +170,59 @@ schedules = {
     schedule_type = {
       non_recurring = ["2023/03/27@11:15-2023/03/27@12:15"]
     }
+  }
+}
+
+external_dynamic_lists = {
+  terraform-edl-gcp-ipv4-usc = {
+    folder = "Shared"
+    type = {
+      ip = {
+        recurring = {
+          five_minute = true
+        }
+        url         = "https://saasedl.paloaltonetworks.com/feeds/gcp/us-central/any/ipv4"
+        description = "Google Cloud US Central Any IPv4"
+      }
+    }
+  }
+  terraform-edl-gcp-ipv4-use = {
+    folder = "Shared"
+    type = {
+      ip = {
+        recurring = {
+          daily = {
+            at = "01" # between 00-23
+          }
+        }
+        url         = "https://saasedl.paloaltonetworks.com/feeds/gcp/us-east/any/ipv4"
+        description = "Google Cloud US East Any IPv4"
+      }
+    }
+  }
+  terraform-edl-gh-ipv4 = {
+    folder = "Shared"
+    type = {
+      ip = {
+        recurring = {
+          hourly = true
+        }
+        url         = "https://saasedl.paloaltonetworks.com/feeds/github/actions/ipv4"
+        description = "Github Actions IPv4"
+      }
+    }
+  }
+}
+
+app_override_rules = {
+  terraform-app-override-rule-1 = {
+    folder      = "Shared"
+    description = "App Override Rule for testing ms office 365"
+    position    = "post"
+    application = "ms-office365"
+    from        = ["any"]
+    to          = ["any"]
+    port        = "443"
+    protocol    = "tcp"
   }
 }

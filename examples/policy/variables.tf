@@ -22,3 +22,11 @@ variable "addresses" {
 variable "schedules" {
   default = {}
 }
+
+variable "app_override_rules" {
+  default = {}
+}
+
+variable "external_dynamic_lists" {
+  default = {}
+}
