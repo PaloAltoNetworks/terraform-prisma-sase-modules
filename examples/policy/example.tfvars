@@ -140,3 +140,35 @@ tags = {
     color    = "Red"
   }
 }
+
+schedules = {
+  weekly-schedule-1 = {
+    folder      = "Shared"
+    description = "Weekly Schedule for testing"
+    schedule_type = {
+      recurring = {
+        weekly = {
+          monday    = ["00:00-00:15"]
+          wednesday = ["00:00-00:15"]
+          friday    = ["00:00-00:15"]
+        }
+      }
+    }
+  }
+  daily-schedule-1 = {
+    folder      = "Shared"
+    description = "Daily Schedule for testing"
+    schedule_type = {
+      recurring = {
+        daily = ["01:00-01:45"]
+      }
+    }
+  }
+  non-recurring-schedule-1 = {
+    folder      = "Shared"
+    description = "Non-Recurring Schedule for testing"
+    schedule_type = {
+      non_recurring = ["2023/03/27@11:15-2023/03/27@12:15"]
+    }
+  }
+}
