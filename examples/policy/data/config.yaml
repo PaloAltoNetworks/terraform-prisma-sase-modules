@@ -42,7 +42,7 @@ security_rules:
 
   terraform-secrule-2:
     folder: "Shared"
-    action: "allow"
+    action: "deny"
     source:
       - "any"
     source_user:
@@ -57,8 +57,35 @@ security_rules:
       - "any"
     services:
       - "terraform-udp-service-1"
-    description: "Allow all traffic"
+    description: "Deny traffic from specific host and compromised machines to Bulletproof IP addresses"
     position: "post"
+    from:
+      - "any"
+    to:
+      - "any"
+    category:
+      - "any"
+    application:
+      - "any"
+  terraform-secrule-3:
+    folder: "Shared"
+    action: "deny"
+    source:
+      - "any"
+    source_user:
+      - "any"
+    source_addresses:
+      - "10.10.74.6"
+    source_address_groups:
+      - "compromised machines"
+    source_edls:
+      - "Palo Alto Networks - Bulletproof IP addresses"
+    destination:
+      - "any"
+    services:
+      - "terraform-udp-service-1"
+    description: "Pre rule to deny traffic to bulletproof IP addresses"
+    position: "pre"
     from:
       - "any"
     to:
@@ -211,6 +238,28 @@ app_override_rules:
     folder: "Shared"
     description: "App Override Rule for testing ms office 365"
     position: "post"
+    from:
+      - trust
+    to:
+      - untrust
+    application: ms-office365
+    port: 443
+    protocol: tcp
+  terraform-app-override-rule-2:
+    folder: "Mobile Users"
+    description: "App Override Rule for testing ms office 365"
+    position: "post"
+    from:
+      - trust
+    to:
+      - untrust
+    application: ms-office365
+    port: 443
+    protocol: tcp
+  terraform-app-override-rule-3:
+    folder: "Shared"
+    description: "App Override Rule for testing ms office 365"
+    position: "pre"
     from:
       - trust
     to:
