@@ -100,3 +100,31 @@ resource "sase_remote_networks" "this" {
 #output "spn_name" {
 #  value = local.spn_name
 #}
+
+#output "rns" {
+#  # Map that consists of the makeup for a remote network. The Remote Network name is the key
+#  # and the value is a map of the remote network dependencies. The value map consists of the
+#  # associated IKE gateway, IPsec tunnel, and SPN name, and Crypto Profiles.
+#  # Example Map:
+#  # {
+#  #
+#  #
+#  #
+#  #
+#  #
+#  #
+#  #
+#  #
+#  # }
+#  value = {
+#    for rn in sase_remote_networks.this : rn.name => {
+#      ike_gateway = rn.value.ike_gateway
+#      ipsec_tunnel = rn.value.ipsec_tunnel
+#      spn_name = rn.value.spn_name
+#      crypto_profiles = {
+#        ike = rn.value.ike_crypto_profile
+#        ipsec = rn.value.ipsec_crypto_profile
+#      }
+#    }
+#  }
+#}
