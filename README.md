@@ -1,4 +1,4 @@
-# NOTICE: This repo is under heavy active development and is not yet ready for production use. Please use at your own risk.
+# NOTICE: This repo is under heavy active development and is not yet ready for production use. Please use for evaluation only.
 
 # Terraform Modules for Palo Alto Networks Prisma SASE
 
