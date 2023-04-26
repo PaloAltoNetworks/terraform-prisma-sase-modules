@@ -118,6 +118,16 @@ services:
         override:
           timeout: 5
 
+  terraform-tcp-service-ssh:
+    folder: "Shared"
+    description: "SSH Service for testing"
+    protocol:
+      tcp:
+        port: "22"
+        source_port: null
+        override:
+          timeout: 5
+
 service_groups:
   terraform-shared-service-group-1:
     folder: "Shared"
