@@ -42,7 +42,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ike_crypto_profiles"></a> [ike\_crypto\_profiles](#output\_ike\_crypto\_profiles) | n/a |
-| <a name="output_ipsec_crypto_profiles"></a> [ipsec\_crypto\_profiles](#output\_ipsec\_crypto\_profiles) | n/a |
-| <a name="output_remote_networks"></a> [remote\_networks](#output\_remote\_networks) | n/a |
+| <a name="output_ike_crypto_profiles"></a> [ike\_crypto\_profiles](#output\_ike\_crypto\_profiles) | The IKE crypto profiles that are created and managed by the Palo ALto Networks SASE service |
+| <a name="output_ipsec_crypto_profiles"></a> [ipsec\_crypto\_profiles](#output\_ipsec\_crypto\_profiles) | The IPSec crypto profiles that are created and managed by the Palo ALto Networks SASE service |
+| <a name="output_remote_networks"></a> [remote\_networks](#output\_remote\_networks) | The remote networks that are created and managed by the Palo ALto Networks SASE service |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

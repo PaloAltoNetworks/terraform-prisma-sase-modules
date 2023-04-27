@@ -34,5 +34,8 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_objects"></a> [objects](#output\_objects) | Map of Palo Alto Networks HIP Objects |
+| <a name="output_profiles"></a> [profiles](#output\_profiles) | Map of Palo Alto Networks HIP Profiles |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

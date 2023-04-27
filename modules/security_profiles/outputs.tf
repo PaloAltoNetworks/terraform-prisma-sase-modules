@@ -8,9 +8,13 @@ output "security_profiles" {
     vulnerability_protection_profiles = try(sase_vulnerability_protection_profiles.this, {})
     wildfire_anti_virus_profiles      = try(sase_wildfire_anti_virus_profiles.this, {})
   }
+  description = "Map of all Palo Alto Networks security profiles"
+  sensitive   = false
 }
 
 output "profile_groups" {
   # Map of all profile groups
-  value = try(sase_profile_groups.this, {})
+  value       = try(sase_profile_groups.this, {})
+  description = "Map of all Palo Alto Networks profile groups"
+  sensitive   = false
 }

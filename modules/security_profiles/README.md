@@ -44,6 +44,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_profile_groups"></a> [profile\_groups](#output\_profile\_groups) | n/a |
-| <a name="output_security_profiles"></a> [security\_profiles](#output\_security\_profiles) | n/a |
+| <a name="output_profile_groups"></a> [profile\_groups](#output\_profile\_groups) | Map of all Palo Alto Networks profile groups |
+| <a name="output_security_profiles"></a> [security\_profiles](#output\_security\_profiles) | Map of all Palo Alto Networks security profiles |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

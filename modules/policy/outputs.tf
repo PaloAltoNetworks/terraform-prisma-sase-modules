@@ -10,6 +10,7 @@ output "objects" {
     external_dynamic_lists = try(sase_objects_external_dynamic_lists.this, {})
     qos_profiles           = try(sase_qos_profiles.this, {})
   }
+  description = "Map of all Palo Alto Networks HIP Objects created by this module"
 }
 
 output "policy" {
@@ -19,4 +20,5 @@ output "policy" {
     app_override_rules = try(sase_app_override_rules.this, {})
     decryption_rules   = try(sase_decryption_rules.this, {})
   }
+  description = "Map of all Palo Alto Networks Policy Rules created by this module"
 }
