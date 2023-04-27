@@ -15,5 +15,5 @@ variable "policy_objects_folders" {
 }
 
 variable "positions" {
-  default = ["pre","post"]
+  default = ["pre", "post"]
 }

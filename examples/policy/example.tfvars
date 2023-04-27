@@ -248,18 +248,18 @@ qos_policy_rules = {
     dscp_tos = {
       codepoints = [
         {
-        name = "af-testing-11"
-        type = {
-          af = {
-            codepoint = "af11" # [af11, af12, af13, af21, af22, af23, af31, af32, af33, af41, af42]
+          name = "af-testing-11"
+          type = {
+            af = {
+              codepoint = "af11" # [af11, af12, af13, af21, af22, af23, af31, af32, af33, af41, af42]
+            }
           }
-        }
         },
         {
-        name = "ef-testing-1"
-        type = {
-          ef = true
-        }
+          name = "ef-testing-1"
+          type = {
+            ef = true
+          }
         },
         {
           name = "cs1-testing"
@@ -271,11 +271,11 @@ qos_policy_rules = {
         },
         {
           name = "tos1-testing"
-            type = {
-                tos = {
-                codepoint = "cs0" # [cs0, cs1, cs2, cs3, cs4, cs5, cs6, cs7]
-                }
+          type = {
+            tos = {
+              codepoint = "cs0" # [cs0, cs1, cs2, cs3, cs4, cs5, cs6, cs7]
             }
+          }
         }
       ]
     }

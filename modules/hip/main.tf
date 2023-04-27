@@ -5,6 +5,7 @@ resource "sase_objects_hip_objects" "this" {
   description          = try(each.value.description, null)
   anti_malware         = try(each.value.anti_malware, null)
   certificate          = try(each.value.certificate, null)
+  custom_checks        = try(each.value.custom_checks, null)
   data_loss_prevention = try(each.value.data_loss_prevention, null)
   disk_backup          = try(each.value.disk_backup, null)
   disk_encryption      = try(each.value.disk_encryption, null)
