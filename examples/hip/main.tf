@@ -7,11 +7,11 @@
 module "hip_with_yaml" {
   source   = "../../modules/hip"
   objects  = yamldecode(file("./data/config.yaml")).objects
-  profiles = {}
+  profiles = yamldecode(file("./data/config.yaml")).profiles
 }
 
 #module "hip_with_json" {
 #  source   = "../../modules/hip"
 #  objects  = jsondecode(file("./data/config.json")).objects
-#  profiles = {}
+#  profiles = jsondecode(file("./data/config.json")).profiles
 #}

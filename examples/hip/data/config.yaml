@@ -3,6 +3,7 @@
 objects:
   terraform-hip-xdr:
     folder: "Shared"
+    description: "Check if Cortex XDR is installed and running"
     anti_malware:
       criteria:
         is_installed: true # Boolean only values
@@ -25,6 +26,7 @@ objects:
   terraform-disk-encrypt-fv:
     # Apparently there is character limit of 31 characters for the name of the object???
     folder: "Mobile Users"
+    description: "Check if FileVault is enabled and running"
     disk_encryption:
       criteria:
         is_installed: true # Boolean only values
@@ -40,6 +42,7 @@ objects:
             - "FileVault"
   terraform-win-firewall:
     folder: "Shared"
+    description: "Check if Windows Firewall is enabled and running"
     firewall:
       criteria:
         is_installed: true  # Boolean only values
@@ -51,6 +54,7 @@ objects:
 
   terraform-wifi-check:
     folder: "Shared"
+    description: "Check if the host is connected to the MyCorpWifi network"
     network_info:
       criteria:
         network:
@@ -60,6 +64,7 @@ objects:
 
   terraform-hosti-id:
     folder: "Shared"
+    description: "Check if the host is a Mac and is a member of the MyCorp domain"
     host_info:
       criteria:
         domain:
@@ -74,6 +79,7 @@ objects:
 
   terraform-mcafee-dlp:
     folder: "Shared"
+    description: "Check if McAfee DLP is installed and running"
     data_loss_prevention:
       criteria:
         is_installed: true  # Boolean only values
@@ -85,6 +91,7 @@ objects:
 
   terraform-custom-plist:
     folder: "Shared"
+    description: "Check if plist is configured correctly"
     custom_checks:
       criteria:
         plist:
@@ -99,6 +106,7 @@ objects:
 
   terraform-custom-regkey:
     folder: "Shared"
+    description: "Check if registry key is configured correctly"
     custom_checks:
       criteria:
         registry_key:
@@ -109,6 +117,7 @@ objects:
 
   terraform-process-list:
     folder: "Shared"
+    description: "Check if process is running"
     custom_checks:
       criteria:
         process_list:
@@ -117,4 +126,59 @@ objects:
           - name: "CortexXDR.exe"
             running: true
 
+  terraform-cert-check:
+    folder: "Shared"
+    description: "Check if certificate is installed"
+    certificate:
+      criteria:
+        certificate_attributes:
+          - name: "key-usage"
+            value: "Digital signature"
+        certificate_profile: null # Set this if a certificate profile exists to validate against
+
+  terraform-patch-check:
+    folder: "Shared"
+    description: "Check if patch management is configured correctly"
+    patch_management:
+      criteria:
+        is_installed: true # Boolean only values
+        is_enabled: "yes" # Boolean only values
+        missing_patches:
+          check: "has-any"
+          patches:
+            - "KB123456"
+            - "KB123457"
+          severity:
+            greater_equal: 500 # possible values [0-10000] # Possible keys are ["greater_equal", "greater_than", "less_than", "less_equal", "is", "is_not"]
+      vendor:
+        - name: "Microsoft Corporation"
+          product:
+            - "Microsoft Intune Client"
+
+  terraform-disk-bkp:
+    folder: Shared
+    description: "Check if disk backup is enabled and configured correctly"
+    disk_backup:
+      criteria:
+        is_installed: true # Boolean only values
+        is_enabled: "yes" # Boolean only values
+        last_backup_time:
+          within: null # BROKEN because both values are being enforced, when it should be either or
+      vendor:
+        - name: "Apple Inc."
+          product:
+            - "Time Machine"
+
 profiles:
+  terraform-corp-prof1:
+    folder: Shared
+    description: Corp Profile Enforcement 1
+    match: "'terraform-win-firewall' and 'terraform-process-list' and 'terraform-wifi-check' and 'terraform-hip-xdr'"
+  terraform-corp-prof2:
+    folder: Shared
+    description: Corp Profile Enforcement 2
+    match: "'terraform-patch-check' or 'terraform-disk-bkp' or 'terraform-cert-check' or 'terraform-mcafee-dlp'"
+  terraform-custom-prof:
+    folder: Shared
+    description: Custom Check Profile
+    match: "not 'terraform-process-list'"

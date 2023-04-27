@@ -78,7 +78,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_objects"></a> [objects](#input\_objects) | n/a | `any` | n/a | yes |
+| <a name="input_objects"></a> [objects](#input\_objects) | **Under Development**<br><br>  **Certificate Attributes Possible Values**:<br>  "['key-usage', 'extended-key-usage', 'subject', 'issuer', 'signature-algorithm', 'serial-no', 'valid-to', 'valid-from',<br>  'subject-alternative-name-url', 'subject-alternative-name-ip', 'subject-alternative-name-email', 'certificate-template-oid', 'certificate-template-name'] | `any` | n/a | yes |
 | <a name="input_profiles"></a> [profiles](#input\_profiles) | n/a | `any` | n/a | yes |
 
 ## Outputs
