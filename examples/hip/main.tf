@@ -8,9 +8,6 @@ module "hip_with_yaml" {
   source   = "../../modules/hip"
   objects  = yamldecode(file("./data/config.yaml")).objects
   profiles = {}
-  providers = {
-    sase = sase
-  }
 }
 
 #module "hip_with_json" {

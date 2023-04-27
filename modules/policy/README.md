@@ -1,6 +1,6 @@
 ## Policy Module
 
-This Terraform Module creates a Policy and Objects to be created and managed by Palo Alto Networks
+This Terraform Module creates a Policy and Objects to be managed by Palo Alto Networks
 Prisma SASE service.
 
 ## Example
