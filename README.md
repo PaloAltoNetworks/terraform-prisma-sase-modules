@@ -1,6 +1,10 @@
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![support](https://img.shields.io/badge/Support%20Level-Community-yellowgreen)](./SUPPORT.md)
+![CI/CD](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
 # NOTICE: This repo is under heavy active development and is not yet ready for production use. Please use for evaluation only.
 
-# Terraform Modules for Palo Alto Networks Prisma SASE
+# Terraform Modules for Palo Alto Networks Prisma SASE 
+
 
 ## Overview
 
