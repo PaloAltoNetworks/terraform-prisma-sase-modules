@@ -11,11 +11,6 @@
 ############################################################################################################
 
 
-data "sase_security_rules_list" "this" {
-  folder   = "Shared"
-  position = "pre"
-}
-
-output "sase_security_rules_list" {
-  value = data.sase_security_rules_list.this
+module "config_output" {
+  source = "../../modules/config"
 }

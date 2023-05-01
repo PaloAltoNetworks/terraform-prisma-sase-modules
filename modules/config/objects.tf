@@ -22,10 +22,10 @@ data "sase_objects_addresses_list" "this" {
   folder   = each.key
 }
 
-#data "sase_objects_address_groups_list" "this" {
-#  for_each = var.policy_objects_folders
-#  folder   = each.key
-#}
+data "sase_objects_address_groups_list" "this" {
+  for_each = local.folder_map
+  folder   = each.key
+}
 
 data "sase_objects_services_list" "this" {
   for_each = local.folder_map

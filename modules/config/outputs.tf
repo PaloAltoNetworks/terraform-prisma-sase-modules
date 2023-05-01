@@ -1,6 +1,6 @@
-output "from_sec_policy" {
-  value = { for k, v in data.sase_security_rules_list.this : k => v.data }
-}
+#output "from_sec_policy" {
+#  value = { for k, v in data.sase_security_rules_list.this : k => v.data }
+#}
 
 output "addresses" {
   value = { for k, v in data.sase_objects_addresses_list.this : k => v.data }
@@ -30,6 +30,7 @@ output "applications" {
   value = { for k, v in data.sase_objects_applications_list.this : k => v.data }
 }
 
-output "security_rules" {
-  value = { for k, v in data.sase_security_rules_list.this : k => v.data }
-}
+#output "security_rules" {
+#  value = data.sase_security_rules_list.this
+##  value = { for k, v in data.sase_security_rules_list.this : k => v.data }
+#}

@@ -23,11 +23,10 @@ No modules.
 | Name | Type |
 |------|------|
 | [sase_anti_spyware_profiles_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/anti_spyware_profiles_list) | data source |
-| [sase_app_override_rules_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/app_override_rules_list) | data source |
 | [sase_decryption_profiles_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/decryption_profiles_list) | data source |
-| [sase_decryption_rules_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/decryption_rules_list) | data source |
 | [sase_dns_security_profiles_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/dns_security_profiles_list) | data source |
 | [sase_file_blocking_profiles_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/file_blocking_profiles_list) | data source |
+| [sase_objects_address_groups_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/objects_address_groups_list) | data source |
 | [sase_objects_addresses_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/objects_addresses_list) | data source |
 | [sase_objects_application_groups_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/objects_application_groups_list) | data source |
 | [sase_objects_applications_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/objects_applications_list) | data source |
@@ -39,7 +38,6 @@ No modules.
 | [sase_objects_services_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/objects_services_list) | data source |
 | [sase_objects_tags_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/objects_tags_list) | data source |
 | [sase_profile_groups_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/profile_groups_list) | data source |
-| [sase_security_rules_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/security_rules_list) | data source |
 | [sase_vulnerability_protection_profiles_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/vulnerability_protection_profiles_list) | data source |
 | [sase_wildfire_anti_virus_profiles_list.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/data-sources/wildfire_anti_virus_profiles_list) | data source |
 
@@ -60,9 +58,7 @@ No modules.
 | <a name="output_application_groups"></a> [application\_groups](#output\_application\_groups) | n/a |
 | <a name="output_applications"></a> [applications](#output\_applications) | n/a |
 | <a name="output_edls"></a> [edls](#output\_edls) | n/a |
-| <a name="output_from_sec_policy"></a> [from\_sec\_policy](#output\_from\_sec\_policy) | n/a |
 | <a name="output_schedules"></a> [schedules](#output\_schedules) | n/a |
-| <a name="output_security_rules"></a> [security\_rules](#output\_security\_rules) | n/a |
 | <a name="output_service_groups"></a> [service\_groups](#output\_service\_groups) | n/a |
 | <a name="output_services"></a> [services](#output\_services) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

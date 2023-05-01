@@ -88,6 +88,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [sase_app_override_rules.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/app_override_rules) | resource |
+| [sase_decryption_exclusions .this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/decryption_exclusions ) | resource |
 | [sase_decryption_rules.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/decryption_rules) | resource |
 | [sase_objects_address_groups.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/objects_address_groups) | resource |
 | [sase_objects_addresses.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/objects_addresses) | resource |
@@ -107,6 +108,7 @@ No modules.
 | <a name="input_address_groups"></a> [address\_groups](#input\_address\_groups) | A map of address groups to create | `map(any)` | `{}` | no |
 | <a name="input_addresses"></a> [addresses](#input\_addresses) | A map of addresses to create | `any` | `{}` | no |
 | <a name="input_app_override_rules"></a> [app\_override\_rules](#input\_app\_override\_rules) | n/a | `any` | `{}` | no |
+| <a name="input_decryption_exclusions"></a> [decryption\_exclusions](#input\_decryption\_exclusions) | A list of decryption exclusions to create | `any` | `{}` | no |
 | <a name="input_decryption_rules"></a> [decryption\_rules](#input\_decryption\_rules) | A map of decryption rules to create | `map(any)` | `{}` | no |
 | <a name="input_external_dynamic_lists"></a> [external\_dynamic\_lists](#input\_external\_dynamic\_lists) | A map of external dynamic lists to create | `any` | `{}` | no |
 | <a name="input_qos_policy_rules"></a> [qos\_policy\_rules](#input\_qos\_policy\_rules) | n/a | `any` | `{}` | no |
