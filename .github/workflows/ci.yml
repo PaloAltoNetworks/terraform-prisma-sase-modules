@@ -29,6 +29,7 @@ jobs:
           chmod +x ./scripts/install.sh
           chmod +x ./scripts/run.sh
           ./scripts/install.sh
+          ./scripts/run.sh
         shell: bash
 
       - name: The `git diff` showing whether the pre-commit mandated extra changes to the repository files
