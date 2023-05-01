@@ -166,7 +166,7 @@ resource "sase_qos_policy_rules" "this" {
   ]
 }
 
-resource "sase_decryption_exclusions " "this" {
+resource "sase_decryption_exclusions" "this" {
   for_each    = try(var.decryption_exclusions, {})
   folder      = try(each.value.folder, "Shared") # Required
   description = try(each.value.description, null)
