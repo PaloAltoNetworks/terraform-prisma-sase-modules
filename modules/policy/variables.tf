@@ -64,3 +64,9 @@ variable "external_dynamic_lists" {
   description = "A map of external dynamic lists to create"
   default     = {}
 }
+
+variable "decryption_exclusions" {
+  type        = any
+  description = "A list of decryption exclusions to create"
+  default     = {}
+}

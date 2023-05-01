@@ -165,3 +165,10 @@ resource "sase_qos_policy_rules" "this" {
     sase_objects_schedules.this
   ]
 }
+
+resource "sase_decryption_exclusions " "this" {
+  for_each    = try(var.decryption_exclusions, {})
+  folder      = try(each.value.folder, "Shared") # Required
+  description = try(each.value.description, null)
+  name        = each.key
+}
