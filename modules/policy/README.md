@@ -88,7 +88,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [sase_app_override_rules.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/app_override_rules) | resource |
-| [sase_decryption_exclusions .this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/decryption_exclusions ) | resource |
+| [sase_decryption_exclusions.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/decryption_exclusions) | resource |
 | [sase_decryption_rules.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/decryption_rules) | resource |
 | [sase_objects_address_groups.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/objects_address_groups) | resource |
 | [sase_objects_addresses.this](https://registry.terraform.io/providers/paloaltonetworks-local/sase/1.0.0/docs/resources/objects_addresses) | resource |
