@@ -25,7 +25,11 @@ jobs:
           python-version: '3.11.0'
 
       - name: Run pre-commit framework as the developer should run it
-        run: sudo ./scripts/install.sh && sudo ./scripts/run.sh
+        run: |
+          chmod +x ./scripts/install.sh
+          chmod +x ./scripts/run.sh
+          ./scripts/install.sh
+        shell: bash
 
       - name: The `git diff` showing whether the pre-commit mandated extra changes to the repository files
         if: failure()
