@@ -3,6 +3,7 @@ provider.tf
 *.tfstate
 .terraform
 terraform.tfstate.backup
+.terraform.lock.hcl
 
 # Ignore all .tfvars files, which are likely to contain sentitive data, such as
 # password, private keys, and other secrets. These should not be part of version
@@ -27,6 +28,14 @@ override.tf.json
 # Include example tfvars files you do wish to add to version control
 !example*.tfvars
 !/scripts/requirements.txt
+!/modules/push/scripts/requirements.txt
 
 # Ignore pre-commit install requirements.txt
 requirements.txt
+
+# Ignore authentication files
+creds.yml
+creds.json
+
+# Ignore Pycache
+__pycache__

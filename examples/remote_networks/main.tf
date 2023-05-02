@@ -19,6 +19,10 @@ module "remote_networks_with_yaml" {
   spns          = local.spns
 }
 
+module "push" {
+  source     = "../../modules/push"
+  depends_on = [module.remote_networks_with_yaml]
+}
 
 #module "remote_networks_with_json" {
 #  source = "../../modules/remote_networks"

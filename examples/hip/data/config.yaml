@@ -13,11 +13,10 @@ objects:
         #          greater_than = "2" This is broken in the Provider right now because integer responses are being returned as strings
         #        }
         real_time_protection: "yes" # Possible Values are ["yes", "no"]
-        virdef_version:
-          #          within = { is currently broken in the provider because version and days defaults are being enforced instead of either or
-          #            days = 7 Days
-          #            versions = 2
-          #          }
+#        virdef_version:
+#                    within:
+#                      days: 7
+#                      versions: 2
       vendor:
         - name: "Palo Alto Networks"
           product:
@@ -77,7 +76,7 @@ objects:
         host_name:
           contains: "mycorp"
 
-  terraform-mcafee-dlp:
+  terraform-tm-dlp:
     folder: "Shared"
     description: "Check if McAfee DLP is installed and running"
     data_loss_prevention:
@@ -85,9 +84,9 @@ objects:
         is_installed: true  # Boolean only values
         is_enabled: "yes" # Values ["yes", "no"]
       vendor:
-        - name: "McAfee, Inc."
+        - name: "Trend Micro, Inc."
           product:
-            - "McAfee DLP Endpoint"
+            - "TrendMicro OfficeScan Client"
 
   terraform-custom-plist:
     folder: "Shared"
