@@ -128,6 +128,13 @@ dns_security_profiles = {
   }
 }
 
+anti_spyware_profiles = {
+  terraform-as-prof1 = {
+    description = "Terraform AS Example1"
+    folder      = "Shared"
+  }
+}
+
 # DNS Security Categories list is not exhaustive
 # ["pan-dns-sec-recent", "pan-dns-sec-grayware", "pan-dns-sec-adtracking",
 #"pan-dns-sec-ddns", "pan-dns-sec-parked", "pan-dns-sec-proxy", "pan-dns-sec-phishing",

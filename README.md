@@ -3,6 +3,10 @@
 
 # NOTICE: This repo is under heavy active development and is not yet ready for production use. Please use for evaluation only.
 
+### Instructions on how to build and install the Alpha Terraform Provider
+Go Here &rarr; [Alpha Provider](https://github.com/PaloAltoNetworks/terraform-provider-sase)
+
+
 # Terraform Modules for Palo Alto Networks Prisma SASE 
 
 
