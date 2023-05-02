@@ -3,13 +3,11 @@ variable "folders" {
 }
 
 variable "trigger" {
-  description = "timestamp trigger everyone time"
+  description = "timestamp trigger time"
 }
-#variable "resources" {
-#  description = "list of terraform resources to trigger resource"
-#}
 
 variable "destroy_condition" {
-  type    = bool
-  default = false
+  type        = bool
+  description = "In development...utilize for conditional create/destroy"
+  default     = false
 }
