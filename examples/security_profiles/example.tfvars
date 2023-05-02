@@ -130,8 +130,22 @@ dns_security_profiles = {
 
 anti_spyware_profiles = {
   terraform-as-prof1 = {
-    description = "Terraform AS Example1"
-    folder      = "Shared"
+    description                 = "Terraform AS Example1"
+    folder                      = "Shared"
+    cloud_inline_analysis       = true
+    inline_exception_edl_url    = null
+    inline_exception_ip_address = null
+    rules = [{
+      action = {
+        allow = true
+      }
+      category       = "command-and-control"
+      name           = "zeb-highcrit"
+      threat_name    = "Zebrocy"
+      packet_capture = "single-packet"
+      severity = [
+      "high", "critical"]
+    }]
   }
 }
 
