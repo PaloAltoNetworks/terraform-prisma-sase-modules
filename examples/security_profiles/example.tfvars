@@ -135,17 +135,61 @@ anti_spyware_profiles = {
     cloud_inline_analysis       = true
     inline_exception_edl_url    = null
     inline_exception_ip_address = null
-    rules = [{
-      action = {
-        allow = true
+    rules = [
+      {
+        action = {
+          reset_server = true
+        }
+        category       = "command-and-control"
+        name           = "zeb-highcrit"
+        threat_name    = "Zebrocy"
+        packet_capture = "single-packet"
+        severity = [
+        "high", "critical"]
+      },
+      {
+        action = {
+          reset_both = true
+        }
+        category       = "keylogger"
+        name           = "acropolis-any"
+        threat_name    = "Acropolis"
+        packet_capture = "extended-capture"
+        severity = [
+        "any"]
+      },
+      {
+        action = {
+          reset_client = true
+        }
+        category       = "fraud"
+        name           = "coinhive-med-high-crit"
+        threat_name    = "CoinHive"
+        packet_capture = "extended-capture"
+        severity = [
+        "medium", "high", "critical"]
       }
-      category       = "command-and-control"
-      name           = "zeb-highcrit"
-      threat_name    = "Zebrocy"
-      packet_capture = "single-packet"
-      severity = [
-      "high", "critical"]
-    }]
+    ]
+  },
+  terraform-as-prof2 = {
+    description                 = "Terraform AS Example2"
+    folder                      = "Shared"
+    cloud_inline_analysis       = true
+    inline_exception_edl_url    = null
+    inline_exception_ip_address = null
+    rules = [
+      {
+        action = {
+          drop = true
+        }
+        category       = "any"
+        name           = "all-high-crit"
+        threat_name    = "Bugs" # This should be optional but it is not
+        packet_capture = "single-packet"
+        severity = [
+        "any"]
+      }
+    ]
   }
 }
 

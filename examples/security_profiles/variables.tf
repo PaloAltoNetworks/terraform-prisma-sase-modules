@@ -1,5 +1,5 @@
 variable "anti_spyware_profiles" {
-  type    = map(any)
+  type    = any
   default = {}
 }
 
