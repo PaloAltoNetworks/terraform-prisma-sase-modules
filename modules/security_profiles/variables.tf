@@ -15,7 +15,7 @@ variable "anti_spyware_profiles" {
 }
 
 variable "wildfire_anti_virus_profiles" {
-  type        = map(any)
+  type        = any
   description = "SASE Wildfire Anti Virus Profiles"
   default     = {}
 }

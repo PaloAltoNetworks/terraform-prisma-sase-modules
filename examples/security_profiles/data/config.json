@@ -233,6 +233,82 @@
       ]
     }
   },
+  "wildfire_anti_virus_profiles": {
+    "terraform-wf-av-prof1": {
+      "description": "Terraform WF AV Example1",
+      "folder": "Shared",
+      "rules": [
+        {
+          "name": "inspect-openai",
+          "analysis": "public-cloud",
+          "application": [
+            "openai-api"
+          ],
+          "direction": "both",
+          "file_type": [
+            "script"
+          ]
+        },
+        {
+          "name": "fileshare",
+          "analysis": "public-cloud",
+          "application": [
+            "boxnet-base",
+            "ms-onedrive-base"
+          ],
+          "direction": "download",
+          "file_type": [
+            "script",
+            "jar",
+            "pe",
+            "apk",
+            "archive"
+          ]
+        },
+        {
+          "name": "inspect-social",
+          "analysis": "public-cloud",
+          "application": [
+            "facebook-base",
+            "hootsuite-base",
+            "linkedin-downloading",
+            "mastodon",
+            "pinterest-base",
+            "twitter-base",
+            "yammer-base"
+          ],
+          "direction": "both",
+          "file_type": [
+            "any"
+          ]
+        }
+      ]
+    },
+    "terraform-wf-av-prof2": {
+      "description": "Terraform WF AV Example2",
+      "folder": "Shared",
+      "rules": [
+        {
+          "name": "inspect-facebook",
+          "analysis": "public-cloud",
+          "application": [
+            "facebook-downloading"
+          ],
+          "direction": "download",
+          "file_type": [
+            "any"
+          ]
+        }
+      ],
+      "mlav_exception": [
+        {
+          "name": "skip-fb-file",
+          "description": "MLAV Exception",
+          "filename": "boom.exe"
+        }
+      ]
+    }
+  },
   "profile_groups": {
     "terraform_profile_group1": {
       "folder": "Mobile Users",

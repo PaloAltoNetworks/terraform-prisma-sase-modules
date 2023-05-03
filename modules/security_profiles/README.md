@@ -38,7 +38,7 @@ No modules.
 | <a name="input_file_blocking_profiles"></a> [file\_blocking\_profiles](#input\_file\_blocking\_profiles) | File Blocking Profiles | `map(any)` | `{}` | no |
 | <a name="input_profile_groups"></a> [profile\_groups](#input\_profile\_groups) | SASE Profile Groups | `map(any)` | `{}` | no |
 | <a name="input_vulnerability_protection_profiles"></a> [vulnerability\_protection\_profiles](#input\_vulnerability\_protection\_profiles) | SASE Vulnerability Protection Profiles | `map(any)` | `{}` | no |
-| <a name="input_wildfire_anti_virus_profiles"></a> [wildfire\_anti\_virus\_profiles](#input\_wildfire\_anti\_virus\_profiles) | SASE Wildfire Anti Virus Profiles | `map(any)` | `{}` | no |
+| <a name="input_wildfire_anti_virus_profiles"></a> [wildfire\_anti\_virus\_profiles](#input\_wildfire\_anti\_virus\_profiles) | SASE Wildfire Anti Virus Profiles | `any` | `{}` | no |
 
 ## Outputs
 

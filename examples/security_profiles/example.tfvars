@@ -193,6 +193,56 @@ anti_spyware_profiles = {
   }
 }
 
+wildfire_anti_virus_profiles = {
+  terraform-wf-av-prof1 = {
+    description = "Terraform WF AV Example1"
+    folder      = "Shared"
+    rules = [
+      {
+        name        = "inspect-openai"
+        analysis    = "public-cloud" #["public-cloud", "private-cloud"]
+        application = ["openai-api"]
+        direction   = "both" # ["upload", "download", "both"]
+        file_type   = ["script"]
+      },
+      {
+        name        = "fileshare"
+        analysis    = "public-cloud" #["public-cloud", "private-cloud"]
+        application = ["boxnet-base", "ms-onedrive-base"]
+        direction   = "download" # ["upload", "download", "both"]
+        file_type   = ["script", "jar", "pe", "apk", "archive"]
+      },
+      {
+        name        = "inspect-social"
+        analysis    = "public-cloud" #["public-cloud", "private-cloud"]
+        application = ["facebook-base", "hootsuite-base", "linkedin-downloading", "mastodon", "pinterest-base", "twitter-base", "yammer-base"]
+        direction   = "both" # ["upload", "download", "both"]
+        file_type   = ["any"]
+      }
+    ]
+  },
+  terraform-wf-av-prof2 = {
+    description = "Terraform WF AV Example2"
+    folder      = "Shared"
+    rules = [
+      {
+        name        = "inspect-facebook"
+        analysis    = "public-cloud" #["public-cloud", "private-cloud"]
+        application = ["facebook-downloading"]
+        direction   = "download" # ["upload", "download", "both"]
+        file_type   = ["any"]
+      }
+    ]
+    mlav_exception = [
+      {
+        name        = "skip-fb-file"
+        description = "MLAV Exception"
+        filename    = "boom.exe"
+      }
+    ]
+  }
+}
+
 # DNS Security Categories list is not exhaustive
 # ["pan-dns-sec-recent", "pan-dns-sec-grayware", "pan-dns-sec-adtracking",
 #"pan-dns-sec-ddns", "pan-dns-sec-parked", "pan-dns-sec-proxy", "pan-dns-sec-phishing",
@@ -214,6 +264,7 @@ profile_groups = {
     file_blocking_profiles            = ["terraform_shared_fb_profile1"]
   }
 }
+
 
 #Anti-Spyware Threat Categories
 #["dns-proxy","backdoor","data-theft","autogen","spyware","dns-security","downloader",
