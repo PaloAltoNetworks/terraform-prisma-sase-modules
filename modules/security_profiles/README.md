@@ -33,7 +33,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_anti_spyware_profiles"></a> [anti\_spyware\_profiles](#input\_anti\_spyware\_profiles) | Anti Spyware Profiles | `map(any)` | `{}` | no |
+| <a name="input_anti_spyware_profiles"></a> [anti\_spyware\_profiles](#input\_anti\_spyware\_profiles) | Anti Spyware Profiles | `any` | `{}` | no |
 | <a name="input_dns_security_profiles"></a> [dns\_security\_profiles](#input\_dns\_security\_profiles) | DNS Security Profiles | `map(any)` | `{}` | no |
 | <a name="input_file_blocking_profiles"></a> [file\_blocking\_profiles](#input\_file\_blocking\_profiles) | File Blocking Profiles | `map(any)` | `{}` | no |
 | <a name="input_profile_groups"></a> [profile\_groups](#input\_profile\_groups) | SASE Profile Groups | `map(any)` | `{}` | no |

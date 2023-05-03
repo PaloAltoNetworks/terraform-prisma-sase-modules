@@ -9,7 +9,7 @@ variable "file_blocking_profiles" {
   default     = {}
 }
 variable "anti_spyware_profiles" {
-  type        = map(any)
+  type        = any
   description = "Anti Spyware Profiles"
   default     = {}
 }
